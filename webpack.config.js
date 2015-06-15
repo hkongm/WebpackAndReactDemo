@@ -17,7 +17,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'react-hot!jsx?harmony'
+        loader: 'react-hot!babel'
         // loader: 'react-hot!jsx-loader?harmony'
       },
       {
