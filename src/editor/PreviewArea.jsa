@@ -1,0 +1,9 @@
+var PreviewArea = React.createClass({
+  render: function() {
+    return (
+      <div className="output-box">
+        <div className="preview-box PC" ref="preview" />
+      </div>
+    )
+  }
+})

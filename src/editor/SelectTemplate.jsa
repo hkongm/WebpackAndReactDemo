@@ -1,0 +1,17 @@
+var SelectTemplate = React.createClass({
+  // 选择模板onChange时的回调
+  changeHandler: function(e) {
+    this.props.selectTemplate(e.target.value)
+  },
+  render: function() {
+    return (
+      <span>
+        请选择模板
+        <select onChange={this.changeHandler}>
+          <option value="intro">使用说明</option>
+          <option value="article">文章</option>
+        </select>
+      </span>
+    )
+  }
+})
