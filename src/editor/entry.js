@@ -1,8 +1,10 @@
 // Markdown 解释器
 // var converter = new Showdown.converter();
 
-var React = require('react');
+require('../../scss/editor.scss');
 
-var Editor = require('./Demo');
+import React from 'react'
 
-React.render(<Editor />, document.body);
+import Editor from './Demo'
+
+React.render(<Editor />, document.body)
