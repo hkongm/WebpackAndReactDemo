@@ -1,10 +1,21 @@
 # WebpackAndReact-Startkit
-React + Sass with webpack.
+React + Sass一个开发基础样本。
 
-## How to Start the Server
+### 如何启用开发服务器
 
 ```
 npm start
 ```
 
-open your browser and open `http://localhost:3000/`.
+后使用浏览器访问 `http://localhost:3000/` 即可实现组件保存后即自动更新浏览器的开发模式。
+
+### 分支说明
+
+逐步完善本Repo，添加一些更方便的功能，按照分支存放。
+
+* Simple 最简分支，只包含React＋Sass的开发服务器功能。
+
+### Todo 
+
+* React Router
+* Flux 实现
