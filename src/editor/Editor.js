@@ -1,10 +1,11 @@
 import React from 'react'
+import showdown from 'showdown'
 import InputArea from './InputArea'
 import PreviewArea from './PreviewArea'
 import _template from './_template'
 
 // Markdown 解释器
-// var converter = new Showdown.converter();
+var converter = new showdown.Converter();
 
 class Editor extends React.Component {
 
@@ -44,7 +45,7 @@ class Editor extends React.Component {
           />
           <div className="div-bar" />
           <PreviewArea 
-            content={this.state.content}
+            content={converter.makeHtml(this.state.content)}
           />
         </div>
       </div>
