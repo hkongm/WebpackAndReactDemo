@@ -19,28 +19,48 @@
 import React from 'react'
 import InputArea from './InputArea'
 import PreviewArea from './PreviewArea'
+import _template from './_template'
 
 class Editor extends React.Component {
 
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {count: props.initialCount}
-  // }
+  constructor(props) {
+    super(props)
+    this.state = {
+      content : "asdfasd"
+    }
+  }
 
-  // tick() {
-  //   this.setState({count: this.state.count + 1})
-  // }
+  updatePreview(newContent) {
+    console.info('Editor组件:updatePreview')
+    this.setState({
+      content : newContent
+    })
+  }
+
+  // 组件加载完成，默认加载语法介绍模板
+  componentDidMount() {
+    console.info('Editor组件:didMount')
+    this.setState({
+      content : _template.simple
+    })
+  }
 
   render() {
+    console.info('Editor组件:render')
     return (
       <div className="editor">
         <div className="top-bar">
           topbar
         </div>
         <div className="edit-box">
-          <InputArea />
+          <InputArea 
+            change={this.updatePreview.bind(this)}
+            content={this.state.content}
+          />
           <div className="div-bar" />
-          <PreviewArea />
+          <PreviewArea 
+            content={this.state.content}
+          />
         </div>
       </div>
     )

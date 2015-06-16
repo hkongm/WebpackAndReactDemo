@@ -6,7 +6,7 @@ class PreviewArea extends React.Component {
     return (
       <div className="output-box">
         <div className="preview-box theme-PC" ref="preview">
-          This is preview.
+          {this.props.content}
         </div>
       </div>
     )
