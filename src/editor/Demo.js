@@ -1,35 +1,24 @@
-// var Editor = React.createClass({
-//   render: function() {
-//     return (
-//       <div className="editor">
-//         <div className="top-bar">
-//           <SelectTemplate selectTemplate={this.selectTemplate} />
-//           <SelectPlatform selectPlatform={this.selectPlatform} />
-//         </div>
-//         <div className="edit-box">
-//           <InputArea ref="input" change={this.updatePreview} />
-//           <div className="div-bar" />
-//           <PreviewArea ref="output" />
-//         </div>
-//       </div>
-//     )
-//   }
-// })
-
 import React from 'react'
 import InputArea from './InputArea'
 import PreviewArea from './PreviewArea'
 import _template from './_template'
+
+// Markdown 解释器
+// var converter = new Showdown.converter();
 
 class Editor extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      content : "asdfasd"
+      content : _template.simple
     }
   }
 
+  /**
+   * [组件实时更新方法]
+   * @param {String} [input新输入的内容纯文本]
+   */
   updatePreview(newContent) {
     console.info('Editor组件:updatePreview')
     this.setState({
@@ -37,12 +26,8 @@ class Editor extends React.Component {
     })
   }
 
-  // 组件加载完成，默认加载语法介绍模板
   componentDidMount() {
     console.info('Editor组件:didMount')
-    this.setState({
-      content : _template.simple
-    })
   }
 
   render() {

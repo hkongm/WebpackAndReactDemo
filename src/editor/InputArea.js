@@ -4,18 +4,18 @@ class InputArea extends React.Component {
   
   constructor(props) {
     super(props)
-
-    this.state = {
-      content : this.props.content
-    }
   }
 
-  // 组件加载完成
   componentDidMount() {
     console.info('InputArea组件:didMount')
+    this.refs.textarea.getDOMNode().value = this.props.content
   }
   
-  // 输入变更时，回调
+  /**
+   * 输入框内容改变的回调，使用props.change访问父级组件Editor的UpdatePreview方法
+   * @param  {Event}
+   * @return {void}
+   */
   changeHandler(e) {
     console.info('InputArea组件:changeHandler')
     this.props.change(e.target.value)
