@@ -16,21 +16,34 @@
 //   }
 // })
 
-import React from "react"
+import React from 'react'
+import InputArea from './InputArea'
+import PreviewArea from './PreviewArea'
 
 class Editor extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {count: props.initialCount}
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {count: props.initialCount}
+  // }
 
-  tick() {
-    this.setState({count: this.state.count + 1})
-  }
+  // tick() {
+  //   this.setState({count: this.state.count + 1})
+  // }
 
   render() {
-    return <h1>this is editor!</h1>
+    return (
+      <div className="editor">
+        <div className="top-bar">
+          topbar
+        </div>
+        <div className="edit-box">
+          <InputArea />
+          <div className="div-bar" />
+          <PreviewArea />
+        </div>
+      </div>
+    )
   }
 }
 
