@@ -22,8 +22,8 @@ class DemoSelector extends React.Component {
         <label>选择示例模板</label>
         <select>
           {
-            this.props.data.map((option) => {
-              return <SelectOption optionname={option.name} />
+            this.props.data.map((option, idx) => {
+              return <SelectOption index={idx} optionname={option.name} />
             })
           }
         </select>
