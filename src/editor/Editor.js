@@ -1,8 +1,9 @@
 import React from 'react'
 import showdown from 'showdown'
-import InputArea from './InputArea'
-import PreviewArea from './PreviewArea'
-import _template from './_template'
+import _template from './__TemplateDemo'
+import DemoSelector from './_DemoSelector'
+import InputArea from './_InputArea'
+import PreviewArea from './_PreviewArea'
 
 // Markdown 解释器
 var converter = new showdown.Converter();
@@ -12,7 +13,7 @@ class Editor extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      content : _template.simple
+      content : _template[0].text
     }
   }
 
@@ -36,7 +37,7 @@ class Editor extends React.Component {
     return (
       <div className="editor">
         <div className="top-bar">
-          topbar
+          <DemoSelector data={_template}/>
         </div>
         <div className="edit-box">
           <InputArea 
