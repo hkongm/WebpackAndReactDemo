@@ -2,18 +2,22 @@ import React from 'react'
 import showdown from 'showdown'
 import _template from './__TemplateDemo'
 import DemoSelector from './_DemoSelector'
+import DeviceSelector from './_DeviceSelector'
 import InputArea from './_InputArea'
 import PreviewArea from './_PreviewArea'
 
 // Markdown 解释器
-var converter = new showdown.Converter();
+let converter = new showdown.Converter()
+
+let _device = ['pc','m','app','apphd']
 
 class Editor extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      content : _template[0].text
+      content : _template[0].text,
+      device : _device[0]
     }
   }
 
@@ -30,12 +34,23 @@ class Editor extends React.Component {
 
   /**
    * [改动模板，相应更新Editor中State的content内容]
-   * @param {Integer} [选中的模板索引]
+   * @param {Integer} [选中的模板的索引]
    */
   changeTemplate(index) {
     console.info('Editor组件:changeTemplate')
     this.setState({
       content : _template[index].text
+    })
+  }
+
+  /**
+   * [改动预览主题]
+   * @param {Integer} [选中的主题的索引]
+   */
+  changeTheme(index) {
+    console.info('Editor组件:changeTheme')
+    this.setState({
+      theme : _theme[index]
     })
   }
 
@@ -51,6 +66,10 @@ class Editor extends React.Component {
           <DemoSelector
             change={this.changeTemplate.bind(this)}
             data={_template}
+          />
+          <DeviceSelector
+            change={this.changeTheme.bind(this)}
+            data={_device}
           />
         </div>
         <div className="edit-box">

@@ -1,5 +1,5 @@
 import React from 'react'
-import SelectOption from './_SelectOption'
+import SelectOption from './__SelectOption'
 
 class DemoSelector extends React.Component {
   
@@ -11,6 +11,11 @@ class DemoSelector extends React.Component {
     console.info('DemoSelector组件:didMount')
   }
 
+  /**
+   * 输入框内容改变的回调，使用props.change访问父级组件Editor的changeTemplate方法
+   * @param  {Event}
+   * @return {void}
+   */
   changeHandler(e) {
     console.info('DemoSelector组件:changeHandler')
     this.props.change(e.target.selectedIndex)
