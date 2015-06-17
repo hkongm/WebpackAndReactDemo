@@ -1,13 +1,14 @@
 import React from 'react'
-import showdown from 'showdown'
 import _template from './__TemplateDemo'
 import DemoSelector from './_DemoSelector'
 import DeviceSelector from './_DeviceSelector'
 import InputArea from './_InputArea'
 import PreviewArea from './_PreviewArea'
 
+import showdown from 'showdown'
+
 // Markdown 解释器
-let converter = new showdown.Converter()
+var converter = new showdown.Converter()
 
 let _device = ['pc','m','app','apphd']
 
@@ -80,7 +81,7 @@ class Editor extends React.Component {
           <div className="div-bar" />
           <PreviewArea 
             deviceStyle={this.state.device}
-            content={converter.makeHtml(this.state.content)}
+            content={this.state.content}
           />
         </div>
       </div>
