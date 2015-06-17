@@ -55,9 +55,9 @@ class Editor extends React.Component {
     })
   }
 
-  componentDidMount() {
-    console.info('Editor组件:didMount')
-  }
+  // componentDidMount() {
+  //   console.info('Editor组件:didMount')
+  // }
 
   render() {
     console.info('Editor组件:render')
