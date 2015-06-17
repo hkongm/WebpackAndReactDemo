@@ -2,13 +2,13 @@ import React from 'react'
 
 class InputArea extends React.Component {
   
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
-  componentDidMount() {
-    console.info('InputArea组件:didMount')
-  }
+  // componentDidMount() {
+  //   console.info('InputArea组件:didMount')
+  // }
   
   /**
    * 输入框内容改变的回调，使用props.change访问父级组件Editor的UpdatePreview方法

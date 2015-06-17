@@ -3,10 +3,13 @@ import React from 'react'
 class PreviewArea extends React.Component {
 
   render() {
+
+    var classes = 'preview-box ' + this.props.deviceStyle
+
     return (
       <div className="output-box">
         <div
-         className="preview-box theme-PC"
+         className={classes}
          dangerouslySetInnerHTML={{__html:this.props.content}}>
         </div>
       </div>

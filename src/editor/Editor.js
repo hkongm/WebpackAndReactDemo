@@ -47,10 +47,10 @@ class Editor extends React.Component {
    * [改动预览主题]
    * @param {Integer} [选中的主题的索引]
    */
-  changeTheme(index) {
+  changeDevice(index) {
     console.info('Editor组件:changeTheme')
     this.setState({
-      theme : _theme[index]
+      device : _device[index]
     })
   }
 
@@ -68,7 +68,7 @@ class Editor extends React.Component {
             data={_template}
           />
           <DeviceSelector
-            change={this.changeTheme.bind(this)}
+            change={this.changeDevice.bind(this)}
             data={_device}
           />
         </div>
@@ -79,6 +79,7 @@ class Editor extends React.Component {
           />
           <div className="div-bar" />
           <PreviewArea 
+            deviceStyle={this.state.device}
             content={converter.makeHtml(this.state.content)}
           />
         </div>

@@ -3,13 +3,13 @@ import SelectOption from './__SelectOption'
 
 class DemoSelector extends React.Component {
   
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
-  componentDidMount() {
-    console.info('DemoSelector组件:didMount')
-  }
+  // componentDidMount() {
+  //   console.info('DemoSelector组件:didMount')
+  // }
 
   /**
    * 输入框内容改变的回调，使用props.change访问父级组件Editor的changeTemplate方法
