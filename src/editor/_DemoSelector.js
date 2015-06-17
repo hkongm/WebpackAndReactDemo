@@ -13,6 +13,7 @@ class DemoSelector extends React.Component {
 
   changeHandler(e) {
     console.info('DemoSelector组件:changeHandler')
+    this.props.change(e.target.selectedIndex)
   }
 
   render() {
@@ -20,10 +21,10 @@ class DemoSelector extends React.Component {
     return (
       <div className="">
         <label>选择示例模板</label>
-        <select>
+        <select onChange={this.changeHandler.bind(this)}>
           {
             this.props.data.map((option, idx) => {
-              return <SelectOption index={idx} optionname={option.name} />
+              return <SelectOption key={idx} optionname={option.name} />
             })
           }
         </select>

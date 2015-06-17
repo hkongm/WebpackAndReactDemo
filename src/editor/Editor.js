@@ -28,6 +28,17 @@ class Editor extends React.Component {
     })
   }
 
+  /**
+   * [改动模板，相应更新Editor中State的content内容]
+   * @param {Integer} [选中的模板索引]
+   */
+  changeTemplate(index) {
+    console.info('Editor组件:changeTemplate')
+    this.setState({
+      content : _template[index].text
+    })
+  }
+
   componentDidMount() {
     console.info('Editor组件:didMount')
   }
@@ -37,7 +48,10 @@ class Editor extends React.Component {
     return (
       <div className="editor">
         <div className="top-bar">
-          <DemoSelector data={_template}/>
+          <DemoSelector
+            change={this.changeTemplate.bind(this)}
+            data={_template}
+          />
         </div>
         <div className="edit-box">
           <InputArea 

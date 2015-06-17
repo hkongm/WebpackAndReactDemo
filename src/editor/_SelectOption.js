@@ -9,7 +9,7 @@ class SelectOption extends React.Component {
   render() {
     console.info('SelectOption组件:render')
     return (
-      <option value={this.props.index}>
+      <option>
         {this.props.optionname}
       </option>
     )
