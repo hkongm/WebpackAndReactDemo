@@ -8,7 +8,6 @@ class InputArea extends React.Component {
 
   componentDidMount() {
     console.info('InputArea组件:didMount')
-    this.refs.textarea.getDOMNode().value = this.props.content
   }
   
   /**
@@ -28,6 +27,7 @@ class InputArea extends React.Component {
         <textarea
           onChange = {this.changeHandler.bind(this)}
           ref = "textarea"
+          value = {this.props.content}
           />
       </div>
     )
