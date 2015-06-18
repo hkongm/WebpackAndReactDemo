@@ -1,6 +1,6 @@
 import React from 'react'
 
-class InputArea extends React.Component {
+export default class InputArea extends React.Component {
   
   // constructor(props) {
   //   super(props)
@@ -33,5 +33,3 @@ class InputArea extends React.Component {
     )
   }
 }
-
-module.exports = InputArea

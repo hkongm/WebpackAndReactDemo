@@ -1,6 +1,6 @@
 import React from 'react'
 
-class SelectOption extends React.Component {
+export default class SelectOption extends React.Component {
   
   // constructor(props) {
   //   super(props)
@@ -15,5 +15,3 @@ class SelectOption extends React.Component {
     )
   }
 }
-
-module.exports = SelectOption

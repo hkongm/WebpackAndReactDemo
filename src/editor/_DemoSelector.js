@@ -1,7 +1,7 @@
 import React from 'react'
 import SelectOption from './__SelectOption'
 
-class DemoSelector extends React.Component {
+export default class DemoSelector extends React.Component {
   
   // constructor(props) {
   //   super(props)
@@ -37,5 +37,3 @@ class DemoSelector extends React.Component {
     )
   }
 }
-
-module.exports = DemoSelector

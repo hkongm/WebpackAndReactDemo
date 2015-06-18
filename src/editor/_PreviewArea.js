@@ -3,7 +3,7 @@ import showdown from 'showdown'
 // Markdown 解释器
 var converter = new showdown.Converter()
 
-class PreviewArea extends React.Component {
+export default class PreviewArea extends React.Component {
 
   render() {
     var classes = 'preview-box ' + this.props.deviceStyle
@@ -18,5 +18,3 @@ class PreviewArea extends React.Component {
     )
   }
 }
-
-module.exports = PreviewArea
