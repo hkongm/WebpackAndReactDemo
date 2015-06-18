@@ -24,7 +24,7 @@ export default class DeviceSelector extends React.Component {
   render() {
     console.info('DeviceSelector组件:render')
     return (
-      <div className="">
+      <div className="selector-box">
         <label>选择设备</label>
         <select onChange={this.changeHandler.bind(this)}>
           {

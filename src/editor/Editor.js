@@ -5,10 +5,9 @@ import DeviceSelector from './_DeviceSelector'
 import InputArea from './_InputArea'
 import PreviewArea from './_PreviewArea'
 
-import showdown from 'showdown'
-
-// Markdown 解释器
-var converter = new showdown.Converter()
+const meta = {
+  title : 'Markdown to page'
+}
 
 let _device = ['pc','m','app','apphd']
 
@@ -64,14 +63,19 @@ class Editor extends React.Component {
     return (
       <div className="editor">
         <div className="top-bar">
-          <DemoSelector
-            change={this.changeTemplate.bind(this)}
-            data={_template}
-          />
-          <DeviceSelector
-            change={this.changeDevice.bind(this)}
-            data={_device}
-          />
+          <div className="title">
+            {meta.title}
+          </div>
+          <div className="option">
+            <DemoSelector
+              change={this.changeTemplate.bind(this)}
+              data={_template}
+            />
+            <DeviceSelector
+              change={this.changeDevice.bind(this)}
+              data={_device}
+            />
+          </div>
         </div>
         <div className="edit-box">
           <InputArea 

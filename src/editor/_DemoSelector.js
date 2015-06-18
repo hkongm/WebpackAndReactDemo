@@ -24,7 +24,7 @@ export default class DemoSelector extends React.Component {
   render() {
     console.info('DemoSelector组件:render')
     return (
-      <div className="">
+      <div className="selector-box">
         <label>选择示例模板</label>
         <select onChange={this.changeHandler.bind(this)}>
           {
