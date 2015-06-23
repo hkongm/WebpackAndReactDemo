@@ -9,6 +9,9 @@ body {
   background-color: #fafafa;
 }
 
+h1 {
+  font-size: 2em;
+}
 
 ul,
 ol {
@@ -27,6 +30,10 @@ strong {
 
 hr {
   border-color: red;
+}
+
+p {
+  text-indent: 2em;
 }
 
 .editor {
