@@ -1,10 +1,32 @@
-* {padding:0;margin: 0}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,input,select,textarea,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}ol,ul{list-style:none;}img{vertical-align:top;}input,select,textarea{margin:0;padding:0;font-size:100%;font:inherit;tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:rgba(0,0,0,0);outline:0;box-shadow:none;}
+html{/*定义字体、背景色等全局样式*/ word-wrap:break-word;text-size-adjust:100%;-webkit-text-size-adjust:100%;}
 
-$borderColor : #e9e9e9;
-$headerBgc : #f8f8f8;
+$borderColor : #e0e0e0;
+$headerBgc : #f0f0f0;
+$shadow : 1px 1px 2px rgba(0,0,0,.4);
 
 body {
   background-color: #fafafa;
+}
+
+
+ul,
+ol {
+  list-style-position: inside;
+  padding-left: 1em;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+strong {
+  font-weight: bold;
+  color: red;
+}
+
+hr {
+  border-color: red;
 }
 
 .editor {
@@ -24,9 +46,11 @@ body {
       line-height: inherit;
       margin: 0 1em;
       select {
+        margin-left: 10px;
         min-width: 6em;
         font-size: 1em;
-        border: 1px solid $borderColor;
+        border: 1px solid darken($borderColor, 10%);
+        box-shadow: $shadow;
       }
     }
   }
@@ -44,7 +68,6 @@ body {
     .output-box {
       flex:1;
       height: 100%;
-      padding: 10px;
       box-sizing:border-box;
     }
     // 输入区
@@ -52,17 +75,22 @@ body {
       textarea {
         width: 100%;
         height: 100%;
-        line-height: 1.5;
-        background-color: inherit;
         font-size: 100%;
+        line-height: 1.5;
+        padding: 10px;
+        background-color: inherit;
+        box-sizing:border-box;
         border: none;
         resize: none;
       }
     }
     // 输出区
     .output-box {
+      padding: 10px;
       overflow-x: hidden;
       overflow-y: scroll;
+      .preview-box {
+      }
     }
   }
 }
