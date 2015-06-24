@@ -2,7 +2,10 @@
 
 $borderColor : #e0e0e0;
 $frameBackgroundColor : #f0f0f0;
-$shadow : 1px 1px 2px rgba(0,0,0,.1);
+
+@mixin box-shadow($shadows:1px 1px 2px rgba(0,0,0,.2)) {
+  box-shadow: $shadows;
+}
 
 body {
   font-family: STHeiti, Simsun, arial, tahoma, sans-serif;
@@ -32,7 +35,7 @@ body {
         font-size: 1em;
         border: 1px solid darken($borderColor, 30%);
         border-radius: 0;
-        box-shadow: $shadow;
+        @include box-shadow();
       }
     }
   }
@@ -76,6 +79,7 @@ body {
       padding: 10px;
       overflow-x: hidden;
       overflow-y: scroll;
+      background-color: gray;
       .preview-box {
 
         @extend .preview-common;
@@ -93,11 +97,6 @@ body {
           a {
             color: #3B5998;
           }
-          hr {
-            height:2px;
-            background-color: #f60;
-            border: none;
-          }
           img {
             width: 620px;
           }
@@ -108,6 +107,7 @@ body {
 
         // M预览样式
         &.m {
+          font-size: 17px;
           width:320px;
           line-height: 1.5em;
           background-color: #FAFAFA;
@@ -136,6 +136,11 @@ body {
 
 // 预览样式通用
 .preview-common {
+  background-color: #FFF;
+  min-height: 100%;
+  line-height: 1em;
+  @include box-shadow(5px 5px 0 rgba(0,0,0,.3));
+
   h1 {
     font-size: 2em;
   }
@@ -156,7 +161,9 @@ body {
   }
 
   hr {
-    border-color: red;
+    height: 1px;
+    background-color: gray;
+    border: none;
   }
 
   p {
