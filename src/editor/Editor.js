@@ -9,7 +9,7 @@ const meta = {
   title : 'Markdown to page'
 }
 
-let _device = ['pc','m','app','apphd']
+let _device = ['normal','pc','m','app','apphd']
 
 class Editor extends React.Component {
 

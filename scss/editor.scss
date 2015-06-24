@@ -12,6 +12,16 @@ body {
   background-color: #fafafa;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1em;
+  padding: .5em 0;
+}
+
 
 .editor {
   border-bottom: 1px solid $borderColor;
@@ -170,6 +180,24 @@ body {
     text-indent: 2em;
     & > img {
       margin-left: -2em;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    p {
+      text-indent: 0;
+    }
+    thead {
+      background-color: #eee;
+    }
+    tbody {
+
+    }
+    th,
+    td {
+      border: 1px solid #ccc;
     }
   }
 }
