@@ -1,11 +1,11 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,input,select,textarea,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}ol,ul{list-style:none;}img{vertical-align:top;}input,select,textarea{margin:0;padding:0;font-size:100%;font:inherit;tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:rgba(0,0,0,0);outline:0;box-shadow:none;}
-html{/*定义字体、背景色等全局样式*/ word-wrap:break-word;text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+@import "_reset.scss";
 
 $borderColor : #e0e0e0;
-$headerBgc : #f0f0f0;
-$shadow : 1px 1px 2px rgba(0,0,0,.4);
+$frameBackgroundColor : #f0f0f0;
+$shadow : 1px 1px 2px rgba(0,0,0,.1);
 
 body {
+  font-family: STHeiti, Simsun, arial, tahoma, sans-serif;
   background-color: #fafafa;
 }
 
@@ -34,6 +34,9 @@ hr {
 
 p {
   text-indent: 2em;
+  & > img {
+    margin-left: -2em;
+  }
 }
 
 .editor {
@@ -41,7 +44,7 @@ p {
   // 上面header
   .top-bar {
     display: flex;
-    background-color: $headerBgc;
+    background-color: $frameBackgroundColor;
     height: 3rem;
     line-height: 3rem;
     border-bottom: 1px solid $borderColor;
@@ -56,7 +59,8 @@ p {
         margin-left: 10px;
         min-width: 6em;
         font-size: 1em;
-        border: 1px solid darken($borderColor, 10%);
+        border: 1px solid darken($borderColor, 30%);
+        border-radius: 0;
         box-shadow: $shadow;
       }
     }
@@ -67,8 +71,12 @@ p {
     height: 500px;
     // 分割线
     .div-bar {
-      width: 1px;
-      background-color: $borderColor;
+      width: 5px;
+      margin-top: -1px;
+      border: 1px solid $borderColor;
+      border-top: none;
+      border-bottom: none;
+      background-color: $frameBackgroundColor;
     }
     // 输入区和输出区
     .input-box,
@@ -88,6 +96,7 @@ p {
         background-color: inherit;
         box-sizing:border-box;
         border: none;
+        outline:none;
         resize: none;
       }
     }
@@ -97,127 +106,55 @@ p {
       overflow-x: hidden;
       overflow-y: scroll;
       .preview-box {
+        // PC预览样式
+        &.pc {
+          font-size: 16px;
+          color: #333;
+          width: 620px;
+          padding: 10px 34px;
+          line-height: 28px;
+          border: solid 1px #ccd3e4;
+          word-wrap: break-word;
+          word-break: break-all;
+          a {
+            color: #3B5998;
+          }
+          hr {
+            height:2px;
+            background-color: #f60;
+            border: none;
+          }
+          img {
+            width: 620px;
+          }
+          strong {
+            color:#f00;
+          }
+        }
+
+        // M预览样式
+        &.m {
+          width:320px;
+          line-height: 1.5em;
+          background-color: #FAFAFA;
+          padding: 5px 10px;
+          a {
+            color:#3b5997;
+          }
+          img {
+            width: 100%;
+            margin-top: 3px;
+          }
+          p {
+            margin: 6px 0;
+          }
+        }
+        
+        // App预览样式
+        &.app {}
+        // AppHD预览样式
+        &.apphd {}
       }
     }
   }
 }
-
-
-
-// body {
-//   background-color: #fafafa;
-// }
-// .editor {
-//   height: 500px;
-//   background-color: #fafafa;
-  
-//   // 上面功能条
-//   .top-bar {
-//     height: 40px;
-//   }
-  
-//   // 左右侧编辑区域
-//   .edit-box {
-//     display:-webkit-flex;
-//     display:flex;
-//     height:inherit;
-//     .div-bar {
-//       flex:0.05;
-//     }
-//     .input-box,
-//     .output-box {
-//       -webkit-flex:1;
-//       flex:1;
-//       height: inherit;
-//     }
-//     .input-box {
-//       textarea {
-//         width: 100%;
-//         height: 100%;
-//         font-size: 1rem;
-//         line-height: 1.2em;
-//         padding: 10px;
-//         border: 1px solid #eee;
-//         background: none;
-//         outline:none;
-//         resize:none;
-//       }
-//     }
-//     .output-box {
-//       overflow: auto;
-//       border: 0;
-//       height: calc(100% + 20px);
-//     }
-//   }
-// }
-// .preview-box {
-//   font-family: STHeiti, Simsun, arial, tahoma, sans-serif;
-//   border: 1px solid #ddd;
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   h6,
-//   ul,
-//   ol {
-//     margin: 0;
-//     padding: 0;
-//   }
-//   ul,
-//   ol {
-//     list-style-position: inside;
-//   }
-//   ol {
-//     list-style-type: decimal;
-//   }
-//   p {
-//     text-indent: 2em;
-//     > img {
-//       margin-left: -2em;
-//     }
-//   }
-// }
-// .preview-box.pc {
-//   font-size: 16px;
-//   color: #333;
-//   width: 620px;
-//   padding: 10px 34px;
-//   line-height: 28px;
-//   border: solid 1px #ccd3e4;
-//   word-wrap: break-word;
-//   word-break: break-all;
-//   a {
-//     color: #3B5998;
-//   }
-//   hr {
-// //    color: #f60;
-//     height:2px;
-//     background-color: #f60;
-//     border: none;
-//   }
-//   img {
-//     width: 620px;
-//   }
-//   strong {
-//     color:#f00;
-//   }
-// }
-// .preview-box.m {
-//   width:320px;
-//   line-height: 1.5em;
-//   background-color: #FAFAFA;
-//   padding: 5px 10px;
-//   a {
-//     color:#3b5997;
-//   }
-//   img {
-//     width: 100%;
-//     margin-top: 3px;
-//   }
-//   p {
-//     margin: 6px 0;
-//   }
-// }
-// .preview-box.app {
-// }
