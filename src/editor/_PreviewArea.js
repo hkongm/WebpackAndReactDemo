@@ -1,7 +1,9 @@
 import React from 'react'
 import showdown from 'showdown'
+import table from 'showdown-table'
+
 // Markdown 解释器
-var converter = new showdown.Converter()
+var converter = new showdown.Converter({extensions: [table]})
 
 export default class PreviewArea extends React.Component {
 
