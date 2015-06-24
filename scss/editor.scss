@@ -9,35 +9,6 @@ body {
   background-color: #fafafa;
 }
 
-h1 {
-  font-size: 2em;
-}
-
-ul,
-ol {
-  list-style-position: inside;
-  padding-left: 1em;
-}
-
-ol {
-  list-style-type: decimal;
-}
-
-strong {
-  font-weight: bold;
-  color: red;
-}
-
-hr {
-  border-color: red;
-}
-
-p {
-  text-indent: 2em;
-  & > img {
-    margin-left: -2em;
-  }
-}
 
 .editor {
   border-bottom: 1px solid $borderColor;
@@ -106,6 +77,9 @@ p {
       overflow-x: hidden;
       overflow-y: scroll;
       .preview-box {
+
+        @extend .preview-common;
+
         // PC预览样式
         &.pc {
           font-size: 16px;
@@ -149,12 +123,46 @@ p {
             margin: 6px 0;
           }
         }
-        
+
         // App预览样式
         &.app {}
         // AppHD预览样式
         &.apphd {}
       }
+    }
+  }
+}
+
+
+// 预览样式通用
+.preview-common {
+  h1 {
+    font-size: 2em;
+  }
+
+  ul,
+  ol {
+    list-style-position: inside;
+    padding-left: 1em;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  strong {
+    font-weight: bold;
+    color: red;
+  }
+
+  hr {
+    border-color: red;
+  }
+
+  p {
+    text-indent: 2em;
+    & > img {
+      margin-left: -2em;
     }
   }
 }
