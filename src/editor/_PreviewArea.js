@@ -1,9 +1,6 @@
 import React from 'react'
 import showdown from 'showdown'
-import table from 'showdown-table'
-
-// Markdown 解释器
-var converter = new showdown.Converter({extensions: [table]})
+import marked from 'marked'
 
 export default class PreviewArea extends React.Component {
 
@@ -14,7 +11,7 @@ export default class PreviewArea extends React.Component {
       <div className="output-box">
         <div
          className={classes}
-         dangerouslySetInnerHTML={{__html:converter.makeHtml(this.props.content)}}>
+         dangerouslySetInnerHTML={{__html:marked(this.props.content, {sanitize: true})}}>
         </div>
       </div>
     )
