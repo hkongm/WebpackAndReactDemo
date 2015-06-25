@@ -14,6 +14,7 @@ npm start
 逐步完善本Repo，添加一些更方便的功能，按照分支存放。
 
 * Simple 最简分支，只包含React＋Sass的开发服务器功能。
+* Editor 使用React配合Showdown实现的Markdown转换器。
 
 ### Todo 
 

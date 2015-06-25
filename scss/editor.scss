@@ -1,0 +1,203 @@
+@import "_reset.scss";
+
+$borderColor : #e0e0e0;
+$frameBackgroundColor : #f0f0f0;
+
+@mixin box-shadow($shadows:1px 1px 2px rgba(0,0,0,.2)) {
+  box-shadow: $shadows;
+}
+
+body {
+  font-family: STHeiti, Simsun, arial, tahoma, sans-serif;
+  background-color: #fafafa;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1em;
+  padding: .5em 0;
+}
+
+
+.editor {
+  border-bottom: 1px solid $borderColor;
+  // 上面header
+  .top-bar {
+    display: flex;
+    background-color: $frameBackgroundColor;
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom: 1px solid $borderColor;
+    justify-content: space-between;
+    .title {
+    }
+    .selector-box {
+      display: inline-block;
+      line-height: inherit;
+      margin: 0 1em;
+      select {
+        margin-left: 10px;
+        min-width: 6em;
+        font-size: 1em;
+        border: 1px solid darken($borderColor, 30%);
+        border-radius: 0;
+        @include box-shadow();
+      }
+    }
+  }
+  // 下面操作区
+  .edit-box {
+    display: flex;
+    height: 500px;
+    // 分割线
+    .div-bar {
+      width: 5px;
+      margin-top: -1px;
+      border: 1px solid $borderColor;
+      border-top: none;
+      border-bottom: none;
+      background-color: $frameBackgroundColor;
+    }
+    // 输入区和输出区
+    .input-box,
+    .output-box {
+      flex:1;
+      height: 100%;
+      box-sizing:border-box;
+    }
+    // 输入区
+    .input-box {
+      textarea {
+        width: 100%;
+        height: 100%;
+        font-size: 100%;
+        line-height: 1.5;
+        padding: 10px;
+        background-color: inherit;
+        box-sizing:border-box;
+        border: none;
+        outline:none;
+        resize: none;
+      }
+    }
+    // 输出区
+    .output-box {
+      padding: 10px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      background-color: gray;
+      .preview-box {
+
+        @extend .preview-common;
+
+        // PC预览样式
+        &.pc {
+          font-size: 16px;
+          color: #333;
+          width: 620px;
+          padding: 10px 34px;
+          line-height: 28px;
+          border: solid 1px #ccd3e4;
+          word-wrap: break-word;
+          word-break: break-all;
+          a {
+            color: #3B5998;
+          }
+          img {
+            width: 620px;
+          }
+          strong {
+            color:#f00;
+          }
+        }
+
+        // M预览样式
+        &.m {
+          font-size: 17px;
+          width:320px;
+          line-height: 1.5em;
+          background-color: #FAFAFA;
+          padding: 5px 10px;
+          a {
+            color:#3b5997;
+          }
+          img {
+            width: 100%;
+            margin-top: 3px;
+          }
+          p {
+            margin: 6px 0;
+          }
+        }
+
+        // App预览样式
+        &.app {}
+        // AppHD预览样式
+        &.apphd {}
+      }
+    }
+  }
+}
+
+
+// 预览样式通用
+.preview-common {
+  background-color: #FFF;
+  min-height: 100%;
+  line-height: 1em;
+  @include box-shadow(5px 5px 0 rgba(0,0,0,.3));
+
+  h1 {
+    font-size: 2em;
+  }
+
+  ul,
+  ol {
+    list-style-position: inside;
+    padding-left: 1em;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  strong {
+    font-weight: bold;
+    color: red;
+  }
+
+  hr {
+    height: 1px;
+    background-color: gray;
+    border: none;
+  }
+
+  p {
+    text-indent: 2em;
+    & > img {
+      margin-left: -2em;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    p {
+      text-indent: 0;
+    }
+    thead {
+      background-color: #eee;
+    }
+    tbody {
+
+    }
+    th,
+    td {
+      border: 1px solid #ccc;
+    }
+  }
+}
