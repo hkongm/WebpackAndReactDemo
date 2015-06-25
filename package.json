@@ -5,7 +5,6 @@
   "main": "bundle.js",
   "dependencies": {
     "css-loader": "^0.14.5",
-    "jsx-loader": "^0.13.2",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.1.2",
     "react": "^0.13.3",

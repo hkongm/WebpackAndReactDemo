@@ -1,5 +1,5 @@
-var React = require('react');
-// import React from 'react';
+// var React = require('react');
+import React from 'react';
 
 class Hello extends React.Component {
   render() {
