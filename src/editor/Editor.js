@@ -5,6 +5,8 @@ import DeviceSelector from './_DeviceSelector'
 import InputArea from './_InputArea'
 import PreviewArea from './_PreviewArea'
 
+require('../../scss/editor.scss');
+
 const meta = {
   title : 'Markdown to page'
 }

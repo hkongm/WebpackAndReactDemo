@@ -2,11 +2,16 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    helloworld: [
+    router: [
       'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server',
       './src/entry.js'
     ],
+    // helloworld: [
+    //   'webpack-dev-server/client?http://localhost:3000',
+    //   'webpack/hot/only-dev-server',
+    //   './src/entry.js'
+    // ],
     editor: [
       'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server',
