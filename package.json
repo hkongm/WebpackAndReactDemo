@@ -12,7 +12,8 @@
     "sass-loader": "^1.0.2",
     "style-loader": "^0.12.3",
     "webpack": "^1.9.10",
-    "webpack-dev-server": "^1.9.0"
+    "webpack-dev-server": "^1.9.0",
+    "marked": "^0.3.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,9 +22,5 @@
     "start": "node server"
   },
   "author": "hkongm",
-  "license": "ISC",
-  "devDependencies": {
-    "showdown": "^1.0.2",
-    "showdown-table": "^1.0.1"
-  }
+  "license": "ISC"
 }
