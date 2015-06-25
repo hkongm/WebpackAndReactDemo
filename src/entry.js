@@ -1,12 +1,13 @@
 import React from 'react'
 import Router from 'react-router'
 
+import Home from './Home'
 import Editor from './editor/Editor'
 
 var {
-  Route: Route, 
-  RouteHandler: RouteHandler, 
-  DefaultRoute: DefaultRoute
+  Route,
+  RouteHandler,
+  DefaultRoute,
 } = Router;
 
 var About = React.createClass({
@@ -15,20 +16,8 @@ var About = React.createClass({
   }
 });
 
-var Inbox = React.createClass({
-  render: function () {
-    return <h2>Inbox</h2>;
-  }
-});
-
-var Home = React.createClass({
-  render: function () {
-    return <h2>Home</h2>;
-  }
-});
-
 var App = React.createClass({
-  render () {
+  render() {
     return (
       <div>
         <RouteHandler/>
@@ -38,12 +27,12 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route handler={App}>
-
-    <DefaultRoute handler={Home}/>
-
-    <Route path="editor" handler={Editor}/>
-    <Route path="about" handler={About}/>
+  <Route location="history">
+    <Route path="/" handler={App}>
+      <Route path="editor" name="editor" handler={Editor}/>
+      <Route path="about" name="about" handler={About}/>
+      <DefaultRoute handler={Home}/>
+    </Route>
   </Route>
 );
 
