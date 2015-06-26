@@ -1,5 +1,4 @@
 import React from 'react'
-import showdown from 'showdown'
 import marked from 'marked'
 
 export default class PreviewArea extends React.Component {
