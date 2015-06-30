@@ -27,11 +27,13 @@ h6 {
   border-bottom: 1px solid $borderColor;
   // 上面header
   .top-bar {
+    display: -webkit-flex;
     display: flex;
     background-color: $frameBackgroundColor;
     height: 3rem;
     line-height: 3rem;
     border-bottom: 1px solid $borderColor;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
     .title {
     }
@@ -51,6 +53,7 @@ h6 {
   }
   // 下面操作区
   .edit-box {
+    display: -webkit-flex;
     display: flex;
     height: 500px;
     // 分割线
@@ -65,6 +68,7 @@ h6 {
     // 输入区和输出区
     .input-box,
     .output-box {
+      -webkit-flex:1;
       flex:1;
       height: 100%;
       box-sizing:border-box;

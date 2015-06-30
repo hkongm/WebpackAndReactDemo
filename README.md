@@ -15,8 +15,8 @@ npm start
 
 * Simple 最简分支，只包含React＋Sass的开发服务器功能。
 * Editor 使用React配合Showdown实现的Markdown转换器。
+* Router React Router分支。
 
-### Todo 
+### Todo
 
-* React Router
-* Flux 实现
+* 组件－table
