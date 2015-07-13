@@ -8,7 +8,7 @@ import PreviewArea from './_PreviewArea'
 require('../../scss/editor.scss');
 
 const meta = {
-  title : 'Markdown to page'
+  title : '实时文章编辑器'
 }
 
 let _device = ['normal','pc','m','app','apphd']
@@ -80,12 +80,12 @@ class Editor extends React.Component {
           </div>
         </div>
         <div className="edit-box">
-          <InputArea 
+          <InputArea
             change={this.updatePreview.bind(this)}
             content={this.state.content}
           />
           <div className="div-bar" />
-          <PreviewArea 
+          <PreviewArea
             deviceStyle={this.state.device}
             content={this.state.content}
           />

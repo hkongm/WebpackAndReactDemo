@@ -36,6 +36,9 @@ h6 {
     -webkit-justify-content: space-between;
     justify-content: space-between;
     .title {
+      padding-left: 1em;
+      font-size: 2em;
+      letter-spacing: .3em;
     }
     .selector-box {
       display: inline-block;
